@@ -1,22 +1,38 @@
+/* =========================
+   LOST DOGS
+   MAIN STYLESHEET
+========================= */
+
+
+/* RESET */
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+
+/* COLORS */
+
 :root {
-  --background: #090909;
-  --text: #dedbd4;
-  --orange: #d34b32;
-  --blue: #6268c7;
+  --black: #080808;
+  --charcoal: #171614;
+  --bone: #d8d3c8;
+  --dirty-white: #eeeae2;
+  --gray: #77736d;
+  --sepia: #817565;
 }
+
+
+/* GENERAL */
 
 body {
-   background: var(--background);
-  color: var(--text);
+  background: var(--black);
+  color: var(--bone);
+
   font-family: Arial, Helvetica, sans-serif;
 }
-
 
 
 a {
@@ -31,143 +47,334 @@ img {
 }
 
 
+/* =========================
+   HEADER
+========================= */
+
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  padding: 25px 4%;
+  padding: 22px 5%;
+}
+
+
+.logo {
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: -1px;
 }
 
 
 nav {
   display: flex;
-  gap: 30px;
+  gap: 28px;
 }
 
 
-.logo {
-  font-size: 28px;
-  font-weight: bold;
+nav a {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+
+  transition: opacity 0.2s ease;
 }
 
+
+nav a:hover {
+  opacity: 0.45;
+}
+
+
+/* =========================
+   HERO
+========================= */
 
 .hero {
-  min-height: 88vh;
+  min-height: 90vh;
 
   display: grid;
-  grid-template-columns: 1.4fr 0.6fr;
 
-  align-items: end;
+  grid-template-columns: 1.1fr 0.9fr;
 
-  gap: 60px;
+  gap: 70px;
 
-  padding: 60px 4% 70px;
+  align-items: center;
 
-  overflow: hidden;
+  padding: 70px 5% 90px;
 }
+
+
+/* LEFT COLUMN */
+
+.hero-left {
+  min-width: 0;
+}
+
+
 .hero-wordmark {
-  font-size: clamp(100px, 15vw, 230px);
+  font-family: "Arial Narrow", Arial, sans-serif;
+
+  font-size: clamp(80px, 12vw, 180px);
 
   font-weight: 900;
 
   line-height: 0.68;
 
-  letter-spacing: -10px;
-
-  text-transform: uppercase;
+  letter-spacing: -8px;
 }
 
 
 .hero-wordmark span {
   display: block;
 }
-.hero-meta {
-  color: var(--orange);
-}
-
-.hero h1 {
-  font-size: 90px;
-  line-height: 0.9;
-
-  margin: 20px 0;
-}
 
 
-.hero-info p {
-  font-size: 12px;
-  letter-spacing: 2px;
-}
-
-
-.hero-link {
-  display: inline-block;
-  margin-top: 40px;
-}
 .hero-info {
-  padding-bottom: 20px;
+  margin-top: 65px;
+}
+
+
+.hero-year {
+  color: var(--gray);
+
+  font-size: 9px;
+
+  letter-spacing: 1.5px;
+
+  margin-bottom: 18px;
 }
 
 
 .hero-info h1 {
-  font-size: clamp(45px, 6vw, 85px);
+  font-family: Georgia, "Times New Roman", serif;
 
-  line-height: 0.9;
+  font-size: clamp(32px, 4vw, 56px);
 
-  margin: 20px 0;
-}
+  font-weight: normal;
 
+  line-height: 0.92;
 
-.hero-meta {
-  color: var(--orange);
-
-  font-size: 11px;
-
-  letter-spacing: 2px;
+  margin-bottom: 22px;
 }
 
 
 .hero-description {
-  font-size: 11px;
+  max-width: 300px;
 
-  letter-spacing: 2px;
+  font-size: 9px;
 
-  line-height: 1.6;
+  letter-spacing: 1.5px;
+
+  line-height: 1.7;
 }
 
 
 .hero-link {
   display: inline-block;
 
-  margin-top: 45px;
+  margin-top: 30px;
 
-  font-size: 12px;
+  font-size: 10px;
+
+  letter-spacing: 1px;
+
+  transition: opacity 0.2s ease;
+}
+
+
+.hero-link:hover {
+  opacity: 0.45;
+}
+
+
+/* RIGHT COLUMN */
+
+.hero-photo {
+  width: 100%;
+
+  max-width: 500px;
+
+  justify-self: end;
+}
+
+
+.photo-placeholder {
+  width: 100%;
+
+  aspect-ratio: 4 / 5;
+
+  background: var(--charcoal);
+
+  border: 1px solid #34312d;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  color: var(--gray);
+
+  font-size: 9px;
+
+  letter-spacing: 1.5px;
+}
+
+
+.hero-note {
+  color: var(--gray);
+
+  margin-top: 12px;
+
+  font-size: 8px;
+
+  line-height: 1.6;
 
   letter-spacing: 1px;
 }
-.hero-link:hover {
-  color: var(--orange);
-}
-.release,
-.tour-preview,
-.merch-preview {
-  padding: 120px 5%;
+
+
+
+/* =========================
+   RECORD
+========================= */
+
+.release {
+  padding: 140px 5%;
 }
 
 
-.section-label {
-  font-size: 11px;
+.release-heading {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 70px;
+}
+
+
+.section-label,
+.release-year {
+  color: var(--gray);
+
+  font-size: 9px;
   letter-spacing: 2px;
-
-  margin-bottom: 30px;
 }
 
 
-.release h2,
-.tour-preview h2,
-.merch-preview h2 {
-  font-size: 55px;
-  margin-bottom: 40px;
+.release-layout {
+  display: grid;
+
+  grid-template-columns: 1.2fr 0.8fr;
+
+  gap: 90px;
+
+  align-items: end;
+}
+
+
+.release-title h2 {
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(55px, 8vw, 110px);
+
+  font-weight: normal;
+
+  line-height: 0.82;
+}
+
+
+.release-copy {
+  max-width: 330px;
+}
+
+
+.release-copy > p:first-child {
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 20px;
+
+  line-height: 1.4;
+
+  color: var(--bone);
+}
+
+
+.release-small {
+  margin-top: 35px;
+
+  color: var(--gray);
+
+  font-size: 9px;
+
+  line-height: 1.7;
+
+  letter-spacing: 1.5px;
+}
+
+
+.release-copy a {
+  display: inline-block;
+
+  margin-top: 35px;
+
+  font-size: 10px;
+
+  letter-spacing: 1.5px;
+
+  transition: opacity 0.2s ease;
+}
+
+
+.release-copy a:hover {
+  opacity: 0.45;
+}
+
+  
+
+
+/* =========================
+   TOUR
+========================= */
+/* =========================
+   LIVE
+========================= */
+
+.tour-preview {
+  padding: 130px 5% 150px;
+}
+
+
+.tour-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  margin-bottom: 55px;
+}
+
+
+.tour-heading h2 {
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: clamp(55px, 8vw, 105px);
+
+  line-height: 0.85;
+
+  letter-spacing: -4px;
+}
+
+
+.tour-note {
+  color: var(--gray);
+
+  font-size: 9px;
+  letter-spacing: 1.7px;
+}
+
+
+.tour-list {
+  border-top: 1px solid #45423e;
 }
 
 
@@ -175,33 +382,379 @@ nav {
   display: grid;
 
   grid-template-columns:
-    120px
-    1fr
-    1fr
+    110px
+    1.1fr
+    1.4fr
     100px;
 
-  padding: 20px 0;
+  align-items: center;
 
-  border-top: 1px solid #555;
+  padding: 23px 0;
+
+  border-bottom: 1px solid #45423e;
+
+  color: #aaa59c;
+
+  font-size: 11px;
+
+  letter-spacing: 0.6px;
+
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
+}
+
+
+.tour-date:hover {
+  color: var(--dirty-white);
+
+  transform: translateX(8px);
+}
+
+
+.tour-date a {
+  text-align: right;
+}
+
+
+.view-all {
+  display: inline-block;
+
+  margin-top: 30px;
+
+  font-size: 10px;
+
+  letter-spacing: 1.5px;
+
+  transition: opacity 0.2s ease;
+}
+
+
+.view-all:hover {
+  opacity: 0.45;
+}
+
+
+  
+  
+ 
+
+
+/* =========================
+   OBJECTS / MERCH
+========================= */
+
+.merch-preview {
+  padding: 120px 5% 150px;
+}
+
+
+.merch-heading {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-end;
+
+  margin-bottom: 70px;
+}
+
+
+.merch-heading h2 {
+  font-size: clamp(48px, 7vw, 90px);
+
+  line-height: 0.9;
+}
+
+
+.merch-archive {
+  color: var(--gray);
+
+  font-size: 9px;
+
+  letter-spacing: 1.5px;
 }
 
 
 .merch-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
 
-  gap: 30px;
+  grid-template-columns:
+    1.2fr
+    0.8fr
+    0.8fr;
+
+  gap: 35px;
+
+  align-items: start;
 
   margin-bottom: 40px;
 }
 
 
+.merch-image {
+  width: 100%;
+
+  aspect-ratio: 1 / 1;
+
+  overflow: hidden;
+}
+.merch-image {
+  position: relative;
+}
+
+
+.merch-arrow {
+  position: absolute;
+
+  right: 14px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  background: none;
+  border: none;
+
+  color: var(--bone);
+
+  font-size: 22px;
+
+  cursor: pointer;
+
+  opacity: 0.6;
+
+  transition: opacity 0.2s ease;
+}
+
+
+.merch-arrow:hover {
+  opacity: 1;
+}
+
+.placeholder {
+  background: #141311;
+
+  border: 1px solid #302e2a;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  color: var(--gray);
+
+  font-size: 9px;
+
+  letter-spacing: 2px;
+}
+
+
+.merch-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+.merch-info {
+  margin-top: 16px;
+}
+
+
+.object-code {
+  color: var(--gray);
+
+  font-size: 9px;
+
+  letter-spacing: 1.5px;
+
+  margin-bottom: 10px;
+}
+
+
+.merch-item h3 {
+  font-size: 15px;
+
+  font-weight: normal;
+
+  margin-bottom: 8px;
+}
+
+
+.object-details {
+  color: #8f8b84;
+
+  font-size: 9px;
+
+  letter-spacing: 1px;
+}
+
+
+.price {
+  margin-top: 12px;
+
+  font-size: 11px;
+}
+
+
+.merch-item {
+  transition: transform 0.3s ease;
+}
+
+
+.merch-item:hover {
+  transform: translateY(-6px);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
 footer {
   display: flex;
+
   justify-content: space-between;
 
   padding: 40px 5%;
 
-  font-size: 10px;
+  border-top: 1px solid #292724;
+
+  color: var(--gray);
+
+  font-size: 9px;
+
   letter-spacing: 1px;
 }
+
+
+/* =========================
+   TABLET / SMALL SCREENS
+========================= */
+
+@media (max-width: 800px) {
+
+  header {
+    padding: 20px 4%;
+  }
+
+
+  nav {
+    gap: 16px;
+  }
+
+
+  .hero {
+    grid-template-columns: 1fr;
+
+    gap: 60px;
+
+    padding: 50px 5% 80px;
+  }
+
+
+  .hero-wordmark {
+    font-size: clamp(80px, 22vw, 130px);
+  }
+
+
+  .hero-info {
+    margin-top: 45px;
+  }
+
+
+  .hero-photo {
+    max-width: 450px;
+
+    justify-self: start;
+  }
+
+
+  .tour-date {
+    grid-template-columns:
+      90px
+      1fr
+      1.3fr
+      80px;
+
+    font-size: 10px;
+  }
+
+
+  .merch-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 550px) {
+
+  header {
+    align-items: flex-start;
+  }
+
+
+  nav {
+    flex-direction: column;
+
+    gap: 8px;
+
+    text-align: right;
+  }
+
+
+  .hero-wordmark {
+    font-size: clamp(75px, 25vw, 110px);
+
+    letter-spacing: -5px;
+  }
+
+
+  .tour-heading,
+  .merch-heading {
+    display: block;
+  }
+
+
+  .tour-heading p,
+  .merch-archive {
+    margin-top: 20px;
+  }
+
+
+  .tour-date {
+    grid-template-columns: 80px 1fr;
+
+    gap: 8px;
+
+    padding: 20px 0;
+  }
+
+
+  .venue {
+    grid-column: 2;
+  }
+
+
+  .ticket-link {
+    grid-column: 2;
+
+    text-align: left;
+  }
+
+
+  .merch-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+ 
