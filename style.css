@@ -4,7 +4,9 @@
 ========================= */
 
 
-/* RESET */
+/* =========================
+   RESET
+========================= */
 
 * {
   box-sizing: border-box;
@@ -13,7 +15,9 @@
 }
 
 
-/* COLORS */
+/* =========================
+   COLORS
+========================= */
 
 :root {
   --black: #080808;
@@ -25,7 +29,9 @@
 }
 
 
-/* GENERAL */
+/* =========================
+   GENERAL
+========================= */
 
 body {
   background: var(--black);
@@ -235,7 +241,6 @@ nav a:hover {
 }
 
 
-
 /* =========================
    RECORD
 ========================= */
@@ -330,14 +335,9 @@ nav a:hover {
   opacity: 0.45;
 }
 
-  
-
 
 /* =========================
-   TOUR
-========================= */
-/* =========================
-   LIVE
+   LIVE / TOUR
 ========================= */
 
 .tour-preview {
@@ -435,19 +435,17 @@ nav a:hover {
 }
 
 
-  
-  
- 
-
-
 /* =========================
    OBJECTS / MERCH
+   HOMEPAGE PREVIEW
 ========================= */
 
 .merch-preview {
-  padding: 120px 5% 150px;
+  padding: 90px 5% 110px;
 }
 
+
+/* HEADING */
 
 .merch-heading {
   display: flex;
@@ -456,19 +454,27 @@ nav a:hover {
 
   align-items: flex-end;
 
-  margin-bottom: 70px;
+  margin-bottom: 60px;
 }
 
 
 .merch-heading h2 {
-  font-size: clamp(48px, 7vw, 90px);
+  margin: 5px 0 0;
+
+  font-size: clamp(52px, 8vw, 100px);
 
   line-height: 0.9;
+
+  font-weight: 500;
+
+  letter-spacing: -0.04em;
 }
 
 
 .merch-archive {
   color: var(--gray);
+
+  margin: 0;
 
   font-size: 9px;
 
@@ -476,60 +482,141 @@ nav a:hover {
 }
 
 
+/* =========================
+   MERCH GRID
+========================= */
+
 .merch-grid {
   display: grid;
 
   grid-template-columns:
-    1.2fr
-    0.8fr
-    0.8fr;
+    repeat(3, minmax(0, 1fr));
 
-  gap: 35px;
+  gap: 50px;
 
   align-items: start;
 
-  margin-bottom: 40px;
+  margin-bottom: 0;
 }
 
 
-.merch-image {
-  width: 100%;
+.merch-item {
+  min-width: 0;
 
-  aspect-ratio: 1 / 1;
-
-  overflow: hidden;
+  transition: transform 0.3s ease;
 }
+
+
+.merch-item:hover {
+  transform: translateY(-6px);
+}
+
+
+/* =========================
+   MERCH IMAGE
+========================= */
+
 .merch-image {
   position: relative;
+
+  width: 100%;
+  height: 330px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 20px;
+
+  overflow: visible;
 }
 
+
+.merch-image img,
+.merch-product-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+}
+
+
+/* OBJECT NUMBER OVER IMAGE */
+
+.merch-image > span {
+  position: absolute;
+
+  left: 10px;
+  bottom: 10px;
+
+  color: var(--gray);
+
+  font-size: 8px;
+
+  letter-spacing: 1.4px;
+}
+
+
+/* =========================
+   MERCH ARROW
+========================= */
 
 .merch-arrow {
   position: absolute;
 
-  right: 14px;
+  right: 10px;
   top: 50%;
 
   transform: translateY(-50%);
 
-  background: none;
+  background: transparent;
+
   border: none;
+  outline: none;
+
+  padding: 0;
+  margin: 0;
 
   color: var(--bone);
 
+  font: inherit;
+
   font-size: 22px;
+
+  line-height: 1;
 
   cursor: pointer;
 
-  opacity: 0.6;
+  opacity: 0.65;
 
-  transition: opacity 0.2s ease;
+  appearance: none;
+  -webkit-appearance: none;
+
+  transition:
+    opacity 0.2s ease,
+    right 0.2s ease;
 }
 
 
 .merch-arrow:hover {
+  right: 5px;
+
   opacity: 1;
 }
+
+
+.merch-arrow:focus-visible {
+  outline: 1px solid var(--bone);
+
+  outline-offset: 5px;
+}
+
+
+/* =========================
+   PLACEHOLDER
+========================= */
 
 .placeholder {
   background: #141311;
@@ -550,16 +637,16 @@ nav a:hover {
 }
 
 
-.merch-image img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-}
-
+/* =========================
+   MERCH INFORMATION
+========================= */
 
 .merch-info {
-  margin-top: 16px;
+  margin-top: 0;
+
+  padding-top: 12px;
+
+  border-top: 1px solid #45423e;
 }
 
 
@@ -575,11 +662,11 @@ nav a:hover {
 
 
 .merch-item h3 {
+  margin-bottom: 8px;
+
   font-size: 15px;
 
   font-weight: normal;
-
-  margin-bottom: 8px;
 }
 
 
@@ -589,6 +676,8 @@ nav a:hover {
   font-size: 9px;
 
   letter-spacing: 1px;
+
+  line-height: 1.5;
 }
 
 
@@ -599,13 +688,23 @@ nav a:hover {
 }
 
 
-.merch-item {
-  transition: transform 0.3s ease;
+/* VIEW ALL OBJECTS */
+
+.merch-preview .view-all {
+  display: inline-block;
+
+  margin-top: 70px;
+
+  font-size: 10px;
+
+  letter-spacing: 1.5px;
+
+  transition: opacity 0.2s ease;
 }
 
 
-.merch-item:hover {
-  transform: translateY(-6px);
+.merch-preview .view-all:hover {
+  opacity: 0.45;
 }
 
 
@@ -646,6 +745,8 @@ footer {
   }
 
 
+  /* HERO */
+
   .hero {
     grid-template-columns: 1fr;
 
@@ -672,6 +773,8 @@ footer {
   }
 
 
+  /* TOUR */
+
   .tour-date {
     grid-template-columns:
       90px
@@ -683,8 +786,17 @@ footer {
   }
 
 
+  /* MERCH */
+
   .merch-grid {
     grid-template-columns: 1fr 1fr;
+
+    gap: 70px 40px;
+  }
+
+
+  .merch-image {
+    height: 360px;
   }
 
 }
@@ -710,12 +822,16 @@ footer {
   }
 
 
+  /* HERO */
+
   .hero-wordmark {
     font-size: clamp(75px, 25vw, 110px);
 
     letter-spacing: -5px;
   }
 
+
+  /* SECTION HEADINGS */
 
   .tour-heading,
   .merch-heading {
@@ -728,6 +844,8 @@ footer {
     margin-top: 20px;
   }
 
+
+  /* TOUR */
 
   .tour-date {
     grid-template-columns: 80px 1fr;
@@ -750,11 +868,44 @@ footer {
   }
 
 
+  /* MERCH */
+
+  .merch-preview {
+    padding: 80px 5% 100px;
+  }
+
+
+  .merch-heading {
+    margin-bottom: 50px;
+  }
+
+
   .merch-grid {
     grid-template-columns: 1fr;
+
+    gap: 75px;
+  }
+
+
+  .merch-image {
+    height: 400px;
+  }
+
+
+  .merch-arrow {
+    right: 8px;
+
+    font-size: 24px;
+  }
+
+
+  .merch-arrow:hover {
+    right: 3px;
+  }
+
+
+  .merch-preview .view-all {
+    margin-top: 60px;
   }
 
 }
-
-
- 
