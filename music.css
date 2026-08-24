@@ -1,0 +1,354 @@
+/* =========================
+   LOST DOGS — MUSIC
+========================= */
+
+
+/* PAGE */
+
+.music-page {
+  padding: 110px 7% 150px;
+}
+
+
+/* =========================
+   ALBUM HEADING
+========================= */
+
+.album-heading {
+  margin-bottom: 90px;
+}
+
+.album-heading h1 {
+  margin: 10px 0 25px;
+
+  font-size: clamp(58px, 10vw, 140px);
+  line-height: 0.82;
+  font-weight: 500;
+  letter-spacing: -0.05em;
+}
+
+.album-year {
+  margin: 0;
+
+  font-size: 11px;
+  letter-spacing: 0.12em;
+}
+
+
+/* =========================
+   ALBUM LAYOUT
+========================= */
+
+.album-layout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(300px, 1.15fr)
+    minmax(260px, 0.85fr);
+
+  gap: 8vw;
+
+  align-items: start;
+
+  margin-bottom: 140px;
+}
+
+
+/* ALBUM ART */
+
+.album-art img {
+  width: 100%;
+  height: auto;
+
+  display: block;
+}
+
+
+/* =========================
+   ALBUM INFORMATION
+========================= */
+
+.album-info {
+  padding-top: 10px;
+}
+
+.album-description {
+  max-width: 420px;
+
+  margin: 0 0 70px;
+
+  font-size: clamp(18px, 2vw, 28px);
+  line-height: 1.45;
+}
+
+
+.album-details {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 35px 50px;
+
+  margin-bottom: 60px;
+
+  padding-top: 18px;
+
+  border-top: 1px solid currentColor;
+}
+
+.album-details p {
+  margin: 0;
+
+  font-size: 10px;
+  line-height: 1.6;
+  letter-spacing: 0.1em;
+}
+
+
+/* LINKS */
+
+.album-links {
+  display: flex;
+  flex-direction: column;
+
+  gap: 14px;
+
+  align-items: flex-start;
+}
+
+.album-links a {
+  color: inherit;
+
+  font-size: 11px;
+  letter-spacing: 0.1em;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.album-links a:hover {
+  transform: translateX(6px);
+  opacity: 0.55;
+}
+
+
+/* =========================
+   TRACKLIST
+========================= */
+
+.tracklist {
+  margin-top: 20px;
+
+  border-top: 1px solid currentColor;
+}
+
+
+.tracklist-heading {
+  display: flex;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  padding: 16px 0 28px;
+
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+
+.tracklist-heading p {
+  margin: 0;
+}
+
+
+/* EACH SONG */
+
+.track {
+  display: grid;
+
+  grid-template-columns:
+    65px
+    1fr
+    auto;
+
+  gap: 25px;
+
+  align-items: center;
+
+  padding: 19px 0;
+
+  border-top: 1px solid currentColor;
+
+  font-size: 12px;
+  letter-spacing: 0.06em;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.track:last-child {
+  border-bottom: 1px solid currentColor;
+}
+
+
+.track:hover {
+  transform: translateX(8px);
+}
+
+
+.track span:first-child,
+.track span:last-child {
+  font-size: 10px;
+}
+
+
+/* =========================
+   BOTTOM RECORD NOTE
+========================= */
+
+.record-note {
+  display: flex;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-top: 90px;
+
+  font-size: 10px;
+  letter-spacing: 0.1em;
+}
+
+.record-note p {
+  margin: 0;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+  .music-page {
+    padding: 90px 6% 120px;
+  }
+
+  .album-heading {
+    margin-bottom: 70px;
+  }
+
+  .album-layout {
+    gap: 55px;
+
+    margin-bottom: 110px;
+  }
+
+  .album-description {
+    margin-bottom: 50px;
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+  .music-page {
+    padding: 75px 6% 100px;
+  }
+
+
+  /* HEADING */
+
+  .album-heading {
+    margin-bottom: 55px;
+  }
+
+  .album-heading h1 {
+    font-size: clamp(52px, 17vw, 85px);
+  }
+
+
+  /* STACK ART + INFORMATION */
+
+  .album-layout {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+
+    margin-bottom: 90px;
+  }
+
+  .album-description {
+    max-width: 100%;
+
+    margin-bottom: 45px;
+  }
+
+  .album-details {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 28px;
+  }
+
+
+  /* TRACKS */
+
+  .track {
+    grid-template-columns:
+      40px
+      1fr
+      auto;
+
+    gap: 12px;
+
+    padding: 17px 0;
+
+    font-size: 11px;
+  }
+
+
+  /* FOOTER NOTE */
+
+  .record-note {
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin-top: 65px;
+  }
+
+}
+
+
+/* =========================
+   SMALL PHONE
+========================= */
+
+@media (max-width: 430px) {
+
+  .album-details {
+    grid-template-columns: 1fr;
+  }
+
+  .track {
+    grid-template-columns:
+      32px
+      1fr;
+
+    gap: 8px 12px;
+  }
+
+  .track span:last-child {
+    grid-column: 2;
+
+    opacity: 0.65;
+  }
+
+}
