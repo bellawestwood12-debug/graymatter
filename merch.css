@@ -1,0 +1,239 @@
+/* =========================
+   LOST DOGS — OBJECTS
+========================= */
+
+
+/* PAGE */
+
+.objects-page {
+  padding: 110px 7% 150px;
+}
+
+
+/* =========================
+   PAGE HEADING
+========================= */
+
+.objects-heading {
+  max-width: 900px;
+  margin-bottom: 100px;
+}
+
+.objects-heading h1 {
+  margin: 10px 0 28px;
+
+  font-size: clamp(54px, 9vw, 125px);
+  line-height: 0.88;
+  font-weight: 500;
+  letter-spacing: -0.05em;
+}
+
+.objects-intro {
+  max-width: 420px;
+
+  margin: 0;
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+
+/* =========================
+   PRODUCT GRID
+========================= */
+
+.objects-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 110px 7vw;
+
+  align-items: start;
+}
+
+
+/* PRODUCT */
+
+.object-item {
+  min-width: 0;
+}
+
+
+/* =========================
+   PRODUCT IMAGE
+========================= */
+
+.object-image {
+  position: relative;
+
+  width: 100%;
+
+  margin-bottom: 22px;
+
+  overflow: hidden;
+}
+
+.object-product-image {
+  width: 100%;
+  height: auto;
+
+  display: block;
+
+  object-fit: contain;
+}
+
+
+/* =========================
+   IMAGE ARROW
+========================= */
+
+.object-arrow {
+  position: absolute;
+
+  right: 16px;
+  bottom: 16px;
+
+  background: transparent;
+  border: none;
+  outline: none;
+
+  padding: 0;
+  margin: 0;
+
+  color: inherit;
+
+  font: inherit;
+  font-size: 26px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.object-arrow:hover {
+  transform: translateX(5px);
+  opacity: 0.6;
+}
+
+.object-arrow:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 5px;
+}
+
+
+/* =========================
+   PRODUCT INFORMATION
+========================= */
+
+.object-info {
+  border-top: 1px solid currentColor;
+
+  padding-top: 14px;
+}
+
+.object-code {
+  margin: 0 0 18px;
+
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+
+.object-info h2 {
+  margin: 0 0 12px;
+
+  font-size: clamp(22px, 2.5vw, 36px);
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.object-details {
+  margin: 0 0 8px;
+
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+}
+
+.object-price {
+  margin: 0;
+
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+
+
+/* =========================
+   THIRD ITEM
+========================= */
+
+/*
+   Lets the third item sit by itself
+   on the next row rather than stretching.
+*/
+
+.object-item:nth-child(3) {
+  max-width: 100%;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+  .objects-page {
+    padding: 90px 6% 120px;
+  }
+
+  .objects-heading {
+    margin-bottom: 75px;
+  }
+
+  .objects-grid {
+    gap: 80px 5vw;
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+  .objects-page {
+    padding: 75px 6% 100px;
+  }
+
+  .objects-heading {
+    margin-bottom: 65px;
+  }
+
+  .objects-heading h1 {
+    font-size: clamp(48px, 15vw, 78px);
+  }
+
+  .objects-grid {
+    grid-template-columns: 1fr;
+
+    gap: 85px;
+  }
+
+  .object-arrow {
+    right: 12px;
+    bottom: 12px;
+
+    font-size: 24px;
+  }
+
+}
