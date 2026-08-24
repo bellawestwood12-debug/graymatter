@@ -1,0 +1,163 @@
+/* =========================
+   LOST DOGS — LIVE
+========================= */
+
+
+.tour-page {
+  padding: 110px 7% 150px;
+}
+
+
+/* =========================
+   PAGE HEADING
+========================= */
+
+.tour-page-heading {
+  margin-bottom: 100px;
+}
+
+.tour-page-heading h1 {
+  margin: 10px 0 30px;
+
+  font-size: clamp(58px, 10vw, 140px);
+  line-height: 0.85;
+  font-weight: 500;
+  letter-spacing: -0.05em;
+}
+
+.tour-intro {
+  display: flex;
+  gap: 35px;
+
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+
+.tour-intro p {
+  margin: 0;
+}
+
+
+/* =========================
+   TOUR LIST
+========================= */
+
+.tour-page-list {
+  border-top: 1px solid currentColor;
+}
+
+.tour-row {
+  display: grid;
+
+  grid-template-columns:
+    120px
+    1fr
+    1fr
+    auto;
+
+  gap: 35px;
+
+  align-items: center;
+
+  padding: 24px 0;
+
+  border-bottom: 1px solid currentColor;
+
+  font-size: 12px;
+  letter-spacing: 0.06em;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+
+/* subtle movement like your homepage */
+
+.tour-row:hover {
+  transform: translateX(10px);
+}
+
+.tour-row a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.tour-row a:hover {
+  opacity: 0.5;
+}
+
+
+.tour-date-number {
+  font-size: 10px;
+}
+
+.tour-city {
+  font-weight: 600;
+}
+
+
+/* =========================
+   BOTTOM NOTE
+========================= */
+
+.tour-footer-note {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 90px;
+
+  font-size: 10px;
+  letter-spacing: 0.1em;
+}
+
+.tour-footer-note p {
+  margin: 0;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 750px) {
+
+  .tour-page {
+    padding: 80px 6% 100px;
+  }
+
+  .tour-page-heading {
+    margin-bottom: 70px;
+  }
+
+  .tour-page-heading h1 {
+    font-size: clamp(55px, 18vw, 90px);
+  }
+
+  .tour-row {
+    grid-template-columns:
+      90px
+      1fr;
+
+    gap: 8px 25px;
+
+    padding: 22px 0;
+  }
+
+  .tour-venue {
+    grid-column: 2;
+  }
+
+  .tour-row a {
+    grid-column: 2;
+    margin-top: 5px;
+  }
+
+  .tour-footer-note {
+    flex-direction: column;
+    gap: 10px;
+
+    margin-top: 65px;
+  }
+
+}
